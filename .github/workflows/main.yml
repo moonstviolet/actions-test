@@ -10,4 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
+        ssh $secret.USERNAME@$secret.HOST
         echo hello, world
