@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        ehco hello, world
+        echo hello, world
