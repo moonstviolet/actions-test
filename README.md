@@ -1,2 +1,2 @@
-# action-test
+# actions-test
 A Github Actions Test Project
