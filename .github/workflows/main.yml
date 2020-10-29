@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: ssh
-      use: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@master
       with:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         host: ${{ secrets.HOST }}
         port: ${{ secrets.PORT }}
-      run: |
-        echo hello, world
+        script: |
+          echo hello, world
