@@ -16,6 +16,6 @@ jobs:
         host: ${{ secrets.HOST }}
         port: ${{ secrets.PORT }}
       run: |
-        ssh "$username"@"$host" -tt
-        "$password"
+        sudo apt-get install sshpass
+        sshpass -p "$password" ssh "$username"@"$host"
         echo hello, world
