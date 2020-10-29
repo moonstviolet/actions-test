@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: ssh
-      env:
+      use: appleboy/ssh-action@master
+      with:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         host: ${{ secrets.HOST }}
         port: ${{ secrets.PORT }}
       run: |
-        sshpass -p ""$password"" ssh "$username"@"$host" -tt
         echo hello, world
-        exit
