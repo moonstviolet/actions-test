@@ -2,13 +2,20 @@ name: CI-Test
 
 on:
   push:
-    branches: [ main ]
+    branches: main
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        ssh $secret.USERNAME@$secret.HOST -tt
+    - name: ssh
+      env:
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        host: ${{ secrets.HOST }}
+        port: ${{ secrets.PORT }}
+      run: |
+        echo hello, world
+        ssh "$username"@"$host"
         echo hello, world
