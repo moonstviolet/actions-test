@@ -16,6 +16,6 @@ jobs:
         host: ${{ secrets.HOST }}
         port: ${{ secrets.PORT }}
       run: |
-        sshpass -p "$password" ssh "$username"@"$host" -tt
+        sshpass -p ""$password"" ssh "$username"@"$host" -tt
         echo hello, world
         exit
