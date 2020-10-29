@@ -16,7 +16,7 @@ jobs:
         host: ${{ secrets.HOST }}
         port: ${{ secrets.PORT }}
       run: |
-        yum -y install expect
+        sudo apt-get install expect
         spawn ssh "$username"@"$host"
         expect "*password*"
         send ""$password"\r"
