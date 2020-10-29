@@ -16,10 +16,6 @@ jobs:
         host: ${{ secrets.HOST }}
         port: ${{ secrets.PORT }}
       run: |
-        sudo apt-get install expect
-        #!/usr/bin/expect
-        spawn ssh "$username"@"$host"
-        expect "*password*"
-        send ""$password"\r"
-        interact
+        ssh "$username"@"$host" -tt
+        "$password"
         echo hello, world
